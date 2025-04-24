@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Планер поездок</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Планер поездок</h1>
+
+        <div class="trip-form">
+            <h2>Добавить новую поездку</h2>
+            <form id="trip-form">
+                <label for="trip-destination">Место назначения:</label>
+                <input type="text" id="trip-destination" placeholder="Куда едем?" required>
+                <label for="trip-date">Дата:</label>
+                <input type="date" id="trip-date" required>
+                <label for="trip-notes">Заметки:</label>
+                <textarea id="trip-notes" placeholder="Дополнительная информация" rows="3"></textarea>
+
+                <fieldset>
+                    <legend>Статус поездки:</legend>
+                    <label><input type="radio" name="trip-status" value="Planned" checked required> Запланировано</label>
+                    <label><input type="radio" name="trip-status" value="Completed" required> Завершено</label>
+                </fieldset>
+
+                <button type="submit">Добавить поездку</button>
+            </form>
+        </div>
+
+        <div class="trip-filter">
+            <label for="date-filter">Фильтр по дате:</label>
+            <input type="date" id="date-filter">
+            
+            <label><input type="checkbox" id="completed-filter"> Показывать только завершенные поездки</label>
+        </div>
+
+        <div class="trip-list">
+            <h2>Мои поездки</h2>
+            <ul id="trip-list"></ul>
+        </div>
+    </div>
+
+    <script src="model.js"></script>
+    <script src="view.js"></script>
+    <script src="presenter.js"></script>
+    <script src="trips.js"></script>
+</body>
+</html>
